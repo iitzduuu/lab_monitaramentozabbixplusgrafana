@@ -1,4 +1,4 @@
-# Laboratório de Monitoramento — Zabbix + Grafana
+# Lab de Monitoramento NOC/INFRA — Zabbix + Grafana
 
 Este projeto demonstra a implementação de um ambiente de monitoramento de infraestrutura utilizando o **Zabbix** (coleta de métricas) integrado ao **Grafana** (visualização), rodando na mesma VM Ubuntu.
 
@@ -16,7 +16,7 @@ O laboratório foi construído usando:
 
 ### 1. Instalação do Zabbix Server
 
-Instalei o Zabbix Server, frontend e banco de dados seguindo a documentação oficial do Zabbix
+Instalei o Zabbix Server, frontend e banco de dados(MYSQL) seguindo a documentação oficial do Zabbix
 
 ### 2. Instalação do Zabbix Agent (auto-monitoramento)
 
@@ -35,6 +35,9 @@ Reiniciei e habilitei o serviço:
 sudo systemctl restart zabbix-agent
 sudo systemctl enable zabbix-agent
 ```
+E após seguir os passos de instalação tive sucesso ao logar no dashboard do Zabbix 
+
+![host](hostzabbix.png)
 
 ### 3. Instalação do Grafana OSS
 
@@ -64,7 +67,9 @@ sudo systemctl start grafana-server
 sudo systemctl enable grafana-server
 ```
 
-Acessei em `http://IP:3000` com o login padrão.
+Acessei em `http://localhost:3000` com o login padrão.
+
+![grafana](grafanatela1.png)
 
 ### 4. Instalação do plugin do Zabbix no Grafana
 
@@ -74,6 +79,10 @@ sudo systemctl restart grafana-server
 ```
 
 Habilitei o plugin em **Administration > Plugins and data > Plugins**, procurando por **Zabbix** e clicando em **Enable**.
+
+
+![plugin](pluginzabbix.png)
+
 
 ### 5. Integração via Data Source
 
@@ -87,11 +96,10 @@ Configurei o datasource em **Connections > Data sources > Add new data source > 
 
 Montei os painéis em **Dashboards > New > New dashboard > Add visualization**, usando o datasource Zabbix:
 
-![dashboard](img/dashboard.png)
-
+![grafana](painelgrafana.png)
 
 ---
 
 ## Conclusão
 
-Este laboratório demonstrou na prática a integração entre uma ferramenta de coleta de métricas (Zabbix) e uma ferramenta de visualização (Grafana), incluindo o diagnóstico e resolução de um problema real de compatibilidade entre o plugin e o servidor web. O processo reforçou conceitos de administração de sistemas Linux, troubleshooting de rede/API e observabilidade de infraestrutura.
+Este laboratório demonstrou na prática a integração entre uma ferramenta de coleta de métricas (Zabbix) e uma ferramenta de visualização (Grafana). O processo reforçou conceitos de administração de sistemas Linux e observabilidade de infraestrutura.
