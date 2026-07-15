@@ -27,7 +27,7 @@ sudo apt-get update
 sudo apt-get install zabbix-agent -y
 ```
 
-Não precisei editar o arquivo de configuração (`/etc/zabbix/zabbix_agentd.conf`) manualmente os valores padrão já apontavam corretamente pra `127.0.0.1`, já que o agente está monitorando a própria máquina onde o Zabbix Server roda.
+Não precisei editar o arquivo de configuração (`/etc/zabbix/zabbix_agentd.conf`) manualmente os valores padrão já apontavam corretamente pra o ip, já que o agente está monitorando a própria máquina onde o Zabbix Server roda.
 
 Reiniciei e habilitei o serviço:
 
