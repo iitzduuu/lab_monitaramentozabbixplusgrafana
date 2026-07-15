@@ -92,6 +92,10 @@ Configurei o datasource em **Connections > Data sources > Add new data source > 
 - **Username:** `Admin`
 - **Password:** senha do Zabbix
 
+E após isso tive a validação da API
+
+![api](APIVALIDADA.png)
+
 ### 6. Criação do Dashboard
 
 Montei os painéis em **Dashboards > New > New dashboard > Add visualization**, usando o datasource Zabbix:
